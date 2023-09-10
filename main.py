@@ -19,7 +19,7 @@ class Person(object):
         logging.info("Creando una nueva persona.")
 
         print("Nueva instancia de persona creada.")
-        return super().__new__(cls)
+        return super().__new__(cls) # solo acepta un argumento, la clase a instanciar.
 
     def __init__(self, name: str, age: int, surname: str) -> None:
         self.name = name
