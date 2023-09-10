@@ -1,5 +1,6 @@
 from typing import Self
 import logging
+import timeit
 
 
 logging.basicConfig(
@@ -52,6 +53,13 @@ def main() -> None:
     print(find_person(surname="KevinED11"))
 
 
+time1 = timeit.timeit('[*"kevin"]', number=100000)
+time2 = timeit.timeit('list("alber")', number=100000)
+print(time1), print(time2)
+
+
 if __name__ == "__main__":
     main()
     print("Fin del programa.")
+    print([*"kevin"])
+    print(list("kevin"))
