@@ -1,6 +1,7 @@
 from typing import Self
 import logging
 import timeit
+import collections
 
 
 logging.basicConfig(
@@ -8,6 +9,7 @@ logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
+print(dict(collections.Counter("Kevin asael espinoza dueñas")))
 
 
 class Person(object):
@@ -61,5 +63,3 @@ print(time1), print(time2)
 if __name__ == "__main__":
     main()
     print("Fin del programa.")
-    print([*"kevin"])
-    print(list("kevin"))
