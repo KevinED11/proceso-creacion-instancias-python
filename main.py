@@ -1,7 +1,6 @@
 from typing import Self
 import logging
 import timeit
-import collections
 
 
 logging.basicConfig(
@@ -9,14 +8,12 @@ logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
-print(dict(collections.Counter("Kevin asael espinoza dueñas")))
 
 
 class Person(object):
     """
     Creates a new instance of the Persona class.
     """
-
     def __new__(cls, *args, **kwargs) -> "Person":
         logging.info("Creando una nueva persona.")
 
@@ -51,8 +48,22 @@ def find_person(surname: str) -> Person:
     return list(filter(lambda p: p.surname == surname, persons))[0]
 
 
+class Singleton:
+    __instance: Self | None = None
+
+    def __new__(cls, *args, **kwargs) -> "Singleton":
+        if cls.__instance is None:
+            logging.info("Creando una nueva instancia de singleton.")
+            cls.__instance = super().__new__(cls)
+        return cls.__instance
+
+
 def main() -> None:
     print(find_person(surname="KevinED11"))
+
+    first = Singleton()
+    second = Singleton()
+    print(first is second)
 
 
 time1 = timeit.timeit('[*"kevin"]', number=100000)
