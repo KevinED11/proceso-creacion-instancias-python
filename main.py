@@ -49,6 +49,9 @@ def find_person(surname: str) -> Person:
 
 
 class Singleton:
+    """
+    Creates and returns a new instance of the Singleton class if one does not already exist
+    """
     __instance: Self | None = None
 
     def __new__(cls, *args, **kwargs) -> "Singleton":
