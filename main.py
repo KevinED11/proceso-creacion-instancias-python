@@ -1,3 +1,16 @@
+"""
+El proceso de creación de instancias de python consta de 2 pasos.
+1. Crear una clase
+2. Crear una instancia
+
+de manera interna, el proceso de creación de instancias de python se divide en 2 pasos
+donde lso constructores activan el proceso de creación de instancias.
+1. __new__ -> Crea una nueva instancia de la clase.
+2. __init__ -> inicializa la instancia dandole un estado inicial.
+
+dentro de __new__ puedes personalizar el proceso de creación de instancias y tener un
+control de mas bajo nivel sobre la creación de instancias.
+"""
 from typing import Self
 import logging
 import timeit
